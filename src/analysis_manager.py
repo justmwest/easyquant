@@ -363,6 +363,20 @@ class AnalysisManager:
 
 
 
+    def export_image_svg(self)-> None:
+        """
+        Saves the currently displayed graph as a .svg image in the directory
+        containing the qd data file. File name is {graph_title}.svg. If
+        file already exists, overwrites.
+        """
+        qd = self.get_active_qd()
+        export_directory = os.path.dirname(qd.path)
+        export_filename = qd.name + ".svg"
+        export_path = os.path.join(export_directory, export_filename)
+        self.graph_manager.fig.savefig(export_path)
+
+
+
     def add_gaussian(self, xc: float, A: float, w: float = None) -> None:
         """
         Instantiates a Gaussian object and adds it to the currently active

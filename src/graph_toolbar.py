@@ -55,6 +55,9 @@ class GraphToolbar(NavigationToolbar2Tk):
             ("save.png", "Save", self.analysis_manager.export,
              "Send to output table(s)"),
 
+            ("save_svg.png", "Save SVG", self.analysis_manager.export_image_svg,
+             "Save the current image as an SVG file."),
+
             ("gauss_unlocked.png", "Fix widths", self.fix_gauss_widths,
              "Fix gaussian widths.")
             ]
